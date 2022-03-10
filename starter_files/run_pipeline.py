@@ -17,6 +17,6 @@ ws = Workspace(subscription_id=subscription_id, resource_group=resource_group, w
 published_pipeline = PublishedPipeline.get(ws, 'f43f5605-9636-4cd3-9f75-7f97053224db')
 pipeline_endpoint = published_pipeline.endpoint
 
-response = requests.post(pipeline_endpoint, headers=auth_header, json={"ExperimentName": "Test"})
+response = requests.post(pipeline_endpoint, headers=auth_header, json={"ExperimentName": "udacity-automlstep-classification"})
 print(response)
 print(response.json())
