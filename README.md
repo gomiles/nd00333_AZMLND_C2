@@ -20,10 +20,13 @@ Steps completed:
   - Benchmark using Apache Benchmark: ![image](https://user-images.githubusercontent.com/56161454/157704966-579a261e-a387-44d9-bd77-3f1ed8d58d26.png)
 ## Public Pipeline
   - Create Pipeline: ![image](https://user-images.githubusercontent.com/56161454/157679227-3a5840aa-b652-42ac-9b98-454bfde2bdbf.png)
-  - Deploay Pipeline: ![image](https://user-images.githubusercontent.com/56161454/157680286-0466ee1b-7298-4eca-a468-d1d0d9d41041.png)
+  - Configure with SDK: ![image](https://user-images.githubusercontent.com/56161454/157710277-a6468460-b654-427f-a180-c45ad013c045.png)
+  - Deploy Pipeline: ![image](https://user-images.githubusercontent.com/56161454/157680286-0466ee1b-7298-4eca-a468-d1d0d9d41041.png)
   - Trigger Pipeline: 
+  - Pipeline runns: ![image](https://user-images.githubusercontent.com/56161454/157711475-ee61553a-58f4-40a4-b018-ad999bd16512.png)
 
- # Improvementes
+ # Improvements
+ A new run of the pipeline makes only sense if something new needs to be processed. This could be the trainingdata used to train the model. Or different pipeline parameter.
  
  # Screencast
  
