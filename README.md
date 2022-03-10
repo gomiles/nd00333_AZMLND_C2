@@ -16,7 +16,7 @@ Steps completed:
   - Deploy Model: ![image](https://user-images.githubusercontent.com/56161454/157678404-3bcd0aac-0bcc-4a87-95dd-f6a15ec8a111.png)
   - Log via Application Insights: ![image](https://user-images.githubusercontent.com/56161454/157704196-ec525065-2bd8-474d-82a7-f943549c96f5.png)
   - Explore Swagger of endpoint: ![image](https://user-images.githubusercontent.com/56161454/157704665-29cce543-fe80-4ecf-881f-cc3931f25a3a.png)
-  - Use Model: 
+  - Use Model: ![image](https://user-images.githubusercontent.com/56161454/157709477-88cf8d10-508a-41be-837b-3a3f068422b8.png)
   - Benchmark using Apache Benchmark: ![image](https://user-images.githubusercontent.com/56161454/157704966-579a261e-a387-44d9-bd77-3f1ed8d58d26.png)
 ## Public Pipeline
   - Create Pipeline: ![image](https://user-images.githubusercontent.com/56161454/157679227-3a5840aa-b652-42ac-9b98-454bfde2bdbf.png)
