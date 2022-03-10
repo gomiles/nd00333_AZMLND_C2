@@ -1,7 +1,7 @@
-import requests
 import json
 import os
 
+import requests
 
 scoring_uri = 'http://e418e45f-0527-4a31-988a-ba09a9f283e1.westeurope.azurecontainer.io/score'
 # If the service is authenticated, set the key or token
@@ -122,4 +122,3 @@ for input_point in input_data:
     print(resp)
     print(resp.json())
     print("")
-
