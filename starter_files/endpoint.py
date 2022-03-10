@@ -2,76 +2,124 @@ import requests
 import json
 import os
 
-# URL for the web service, should be similar to:
-# 'http://8530a665-66f3-49c8-a953-b82a2d312917.eastus.azurecontainer.io/score'
+
 scoring_uri = 'http://e418e45f-0527-4a31-988a-ba09a9f283e1.westeurope.azurecontainer.io/score'
 # If the service is authenticated, set the key or token
 key = os.getenv('APIKEY')
 
 # Two sets of data to score, so we get two results back
-data = {
-  "Inputs": {
-    "data": [
-      {
-        "age": 0,
-        "marital": 0,
-        "default": 0,
-        "housing": 0,
-        "loan": 0,
-        "month": 0,
-        "day_of_week": 0,
-        "duration": 0,
-        "campaign": 0,
-        "pdays": 0,
-        "previous": 0,
-        "poutcome": 0,
-        "emp.var.rate": 0,
-        "cons.price.idx": 0,
-        "cons.conf.idx": 0,
-        "euribor3m": 0,
-        "nr.employed": 0,
-        "job_admin.": 0,
-        "job_blue-collar": 0,
-        "job_entrepreneur": 0,
-        "job_housemaid": 0,
-        "job_management": 0,
-        "job_retired": 0,
-        "job_self-employed": 0,
-        "job_services": 0,
-        "job_student": 0,
-        "job_technician": 0,
-        "job_unemployed": 0,
-        "job_unknown": 0,
-        "contact_cellular": 0,
-        "contact_telephone": 0,
-        "education_basic.4y": 0,
-        "education_basic.6y": 0,
-        "education_basic.9y": 0,
-        "education_high.school": 0,
-        "education_illiterate": 0,
-        "education_professional.course": 0,
-        "education_university.degree": 0,
-        "education_unknown": 0
-      }
-    ]
-  },
-  "GlobalParameters": {
-    "method": "predict"
-  }
-}
+data = [{
+    "Inputs": {
+        "data": [
+            {
+                "age": 0,
+                "marital": 0,
+                "default": 0,
+                "housing": 0,
+                "loan": 0,
+                "month": 0,
+                "day_of_week": 0,
+                "duration": 0,
+                "campaign": 0,
+                "pdays": 0,
+                "previous": 0,
+                "poutcome": 0,
+                "emp.var.rate": 0,
+                "cons.price.idx": 0,
+                "cons.conf.idx": 0,
+                "euribor3m": 0,
+                "nr.employed": 0,
+                "job_admin.": 0,
+                "job_blue-collar": 0,
+                "job_entrepreneur": 0,
+                "job_housemaid": 0,
+                "job_management": 0,
+                "job_retired": 0,
+                "job_self-employed": 0,
+                "job_services": 0,
+                "job_student": 0,
+                "job_technician": 0,
+                "job_unemployed": 0,
+                "job_unknown": 0,
+                "contact_cellular": 0,
+                "contact_telephone": 0,
+                "education_basic.4y": 0,
+                "education_basic.6y": 0,
+                "education_basic.9y": 0,
+                "education_high.school": 0,
+                "education_illiterate": 0,
+                "education_professional.course": 0,
+                "education_university.degree": 0,
+                "education_unknown": 0
+            }
+        ]
+    },
+    "GlobalParameters": {
+        "method": "predict"
+    }
+}, {
+    "Inputs": {
+        "data": [
+            {
+                "age": 0,
+                "marital": 0,
+                "default": 0,
+                "housing": 0,
+                "loan": 0,
+                "month": 0,
+                "day_of_week": 0,
+                "duration": 1000,
+                "campaign": 0,
+                "pdays": 0,
+                "previous": 0,
+                "poutcome": 0,
+                "emp.var.rate": 0,
+                "cons.price.idx": 0,
+                "cons.conf.idx": 0,
+                "euribor3m": 0,
+                "nr.employed": 0,
+                "job_admin.": 0,
+                "job_blue-collar": 0,
+                "job_entrepreneur": 0,
+                "job_housemaid": 0,
+                "job_management": 0,
+                "job_retired": 0,
+                "job_self-employed": 0,
+                "job_services": 0,
+                "job_student": 0,
+                "job_technician": 0,
+                "job_unemployed": 0,
+                "job_unknown": 0,
+                "contact_cellular": 0,
+                "contact_telephone": 0,
+                "education_basic.4y": 0,
+                "education_basic.6y": 0,
+                "education_basic.9y": 0,
+                "education_high.school": 0,
+                "education_illiterate": 0,
+                "education_professional.course": 0,
+                "education_university.degree": 0,
+                "education_unknown": 0
+            }
+        ]
+    },
+    "GlobalParameters": {
+        "method": "predict"
+    }
+}]
 # Convert to JSON string
-input_data = json.dumps(data)
-with open("data.json", "w") as _f:
-    _f.write(input_data)
+input_data = [json.dumps(data_point) for data_point in data]
 
 # Set the content type
 headers = {'Content-Type': 'application/json'}
-# If authentication is enabled, set the authorization header
+# Add authorization header
 headers['Authorization'] = f'Bearer {key}'
 
 # Make the request and display the response
-resp = requests.post(scoring_uri, input_data, headers=headers)
-print(resp)
-print(resp.json())
-
+for input_point in input_data:
+    print("Sending request")
+    resp = requests.post(scoring_uri, input_point, headers=headers)
+    print(resp)
+    print(resp.json())
+    print("")
 
