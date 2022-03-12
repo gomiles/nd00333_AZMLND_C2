@@ -2,12 +2,20 @@
  
 In this Udacity project the goal was to learn how to operationalize machine learning in the Azure cloud.
 Steps completed:
- - Deploy a model
- - Use the model (consume endpoints)
- - Automate the process (pipeline automation)
+ - Train a Model (AutoML)
+ - Deploy a Model (Rest endpoint)
+ - Use the Model (Consume rest endpoints via HTTPS)
+ - Automate the Process (Create pipeline + publish)
+ - Use Automation (Trigger pipeline via HTTPS)
 
  # Architectual Diagram
  ![image](https://user-images.githubusercontent.com/56161454/157675813-decd84bc-4867-4813-81a7-c6b283c92795.png)
+
+ # Improvements
+  - Pipeline Parameter
+    - A new run of the pipeline makes only sense if something new needs to be processed. This could be the trainingdata used to train the model. Or different pipeline parameters.
+  - Automatic Model Deployment
+    - The next step in automation would be to automatically deploy the best model of a pipeline run.
 
  # Key Steps
  ## Deploy Model
@@ -22,15 +30,10 @@ Steps completed:
   - Create Pipeline: ![image](https://user-images.githubusercontent.com/56161454/157679227-3a5840aa-b652-42ac-9b98-454bfde2bdbf.png)
   - Configure with SDK: ![image](https://user-images.githubusercontent.com/56161454/157710277-a6468460-b654-427f-a180-c45ad013c045.png)
   - Deploy Pipeline: ![image](https://user-images.githubusercontent.com/56161454/157680286-0466ee1b-7298-4eca-a468-d1d0d9d41041.png)
+  - Details of Deployed Pipeline: ![image](https://user-images.githubusercontent.com/56161454/158007734-6f48589b-7df8-4af2-ac6f-6098a8299ead.png)
   - Trigger Pipeline: ![image](https://user-images.githubusercontent.com/56161454/157743696-b03eb9ff-cfc8-4962-a76b-ad429c2f0a89.png)
   - Pipeline Rerun: ![image](https://user-images.githubusercontent.com/56161454/157711475-ee61553a-58f4-40a4-b018-ad999bd16512.png)
 
- # Improvements
-  - Pipeline Parameter
-    - A new run of the pipeline makes only sense if something new needs to be processed. This could be the trainingdata used to train the model. Or different pipeline parameters.
-  - Automatic Model Deployment
-    - The next step in automation would be to automatically deploy the best model of a pipeline run.
- 
  # Screencast
  https://youtu.be/FSHurKVr68E
  
